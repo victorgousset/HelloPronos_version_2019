@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SHOT!</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+        html {
+            font-family: 'Fjalla One', sans-serif;
+            background-color: #4b3bca;
+        }
+
+        #game {
+
+        }
+
+        .a {
+            background-color: #f6b93b;
+        }
+
+        .b {
+            background-color: #e55039;
+        }
+
+        .c {
+            background-color: #4a69bd;
+        }
+
+        .d {
+            background-color: #c39bd3;
+        }
+
+        .e {
+            background-color: #48c9b0;
+        }
+
+        .f {
+            background-color: #7fb3d5;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 30vh;
+            transform: translateY(-30%);
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="game">
+
+    <form class="add_player">
+        <label for="player">Ajouter des joueurs</label><br><input type="text" placeholder="Ajouter des players" class="player_text" name="player"><br>
+        <input type="submit" value="Ajouter" id="submit_player">
+    </form>
+
+    <ul></ul>
+
+    <br>
+
+    <div id="player"></div>
+
+    <br>
+
+    <input type="submit" value="Faire des equipes (facultatif)" id="submit_team">
+    <div id="team"></div>
+
+    <br>
+
+    <form method="POST" id="form">
+        <input type="submit" value="JOUER !" id="submit">
+    </form>
+
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    //FAIRE DES EQUIPES
+    $(document).ready(function () {
+
+        let countGame = [];
+
+        let player = [];
+        let gameParameter = [];
+
+        let btn = $("#game");
+
+        function random(length) {
+            let result = '';
+            let characters = 'abcdef';
+            let charactersLength = characters.length;
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        $('.add_player').submit(function() {
+            if ($('.player_text').val() !== '') {
+                var newTask = $('.player_text').val();
+                player.push(newTask);
+                var newLi = $('<li>' + newTask + '</li>');
+
+                    newLi.on('click', function() {
+                        $(this).remove();
+                        player.splice(player.indexOf(newTask), 1);
+                    });
+
+                    $('ul').prepend(newLi);
+                    $('.player_text').val('');
+
+                return false;
+            }
+        });
+
+        $('#submit_team').click(function () {
+            let red = [];
+            let yellow = [];
+            let sizePlayer = player.length;
+
+            console.log(sizePlayer);
+
+            if(sizePlayer > 4) {
+                gameParameter.push("1");
+
+                for (let i = 0; i <= sizePlayer; i++) {
+                    if(i%2 == 0) {
+                        red.push(player[i]);
+                    } else {
+                        yellow.push(player[i]);
+                    }
+                }
+
+                let sizeRed = red.length;
+                let sizeYellow = yellow.length;
+
+                $('#team').html("<p style='color:red'>Equipe rouge: " + red + "</p><br><p style='color: #f6b93b'>Equipe jaune: " + yellow + "</p>");
+
+            } else {
+                console.log("Pas assz de joueur");
+            }
+        });
+
+
+
+        //PLAY
+
+
+
+        $("#form").on('submit', function () {
+            $("#game").html("<h1>" + "eee" + "</h1><br><p>Test</p>");
+            $("html").toggleClass(random(1));
+
+            $("html").click(function () {
+                $(this).removeClass();
+                var color = random(1);
+
+                if($(this).hasClass(color)) {
+                    $(this).toggleClass(random(1));
+                } else {
+                    $(this).toggleClass(color);
+                }
+
+                countGame.push("a");
+                console.log(countGame);
+            });
+
+        });
+
+    })
+</script>
+</body>
+</html>

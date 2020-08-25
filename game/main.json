@@ -1,0 +1,18 @@
+[
+  {
+    "id": 2,
+    "title": "Epreuve immunite",
+    "game": "Chaque equipe doit choisir un membre qui va boire un shot",
+    "team": 0,
+    "follow": 0,
+    "follow_id" : 0
+  },
+  {
+    "id": 2,
+    "title": "Crab And Apple Coleslaw",
+    "game": "In a large bowl, combine mayonnaise, vinegar, sugar, cream, lemon,  salt, and pepper. Add cabbage, carrot, bell pepper, green apple and  toss. Next, add half of the crab meat and toss gently. Place portion  on plate, and top with remaining crab. Garnish with apple slices.",
+    "team": 0,
+    "follow": 0,
+    "follow_id" : 0
+  }
+]

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Out !</title>
+    <link href="styleBlackOut.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<div class="main">
+
+    <div id="1" class="cell empty d"><p class="text">C'est parti, 2 gorgees d'entree <br>1</p></div>
+    <div id="2" class="cell empty a"><p class="text">2 gorges<br>2</p></div>
+    <div id="3" class="cell empty d"><p class="text">Designer qq qui va boire<br>3</p></div>
+    <div id="4" class="cell empty b"><p class="text">J'ai, je n'ai jamais<br>4</p></div>
+    <div id="5" class="cell empty c"><p class="text">SHOT GENERAL !<br>5</p></div>
+    <div id="6" class="cell empty b"><p class="text">Lance une pyramide, de 5 de hauteur<br>6</p></div>
+    <div id="7" class="cell empty f"><p class="text">Pause petou<br>7</p></div>
+    <div id="8" class="cell empty a"><p class="text">Time's up<br>8</p></div>
+    <div id="9" class="cell empty c"><p class="text">Theme<br>9</p></div>
+    <div id="10" class="cell empty a"><p class="text">SHOT GENERAL !<br>10</p></div>
+    <div id="11" class="cell empty b"><p class="text">Chaque equipe doit choisir un joueur qui va boire un shot.<br>11</p></div>
+    <div id="12" class="cell empty e"><p class="text">cul sec<br>12</p></div>
+    <div id="13" class="cell empty c"><p class="text">6 gorges<br>13</p></div>
+    <div id="14" class="cell empty f"><p class="text">Action ou verite<br>14</p></div>
+    <div id="15" class="cell empty c"><p class="text">SHOT GENERAL !<br>15</p></div>
+    <div id="16" class="cell empty d"><p class="text">J'ai, je n'ai jamais<br>16</p></div>
+    <div id="17" class="cell empty a"><p class="text">Roi du freeze<br>17</p></div>
+    <div id="18" class="cell empty e"><p class="text">8 gorges<br>18</p></div>
+    <div id="19" class="cell empty a"><p class="text">Verre dans la main droite -> shot<br>19</p></div>
+    <div id="20" class="cell empty e"><p class="text">SHOT GENERAL !<br>20</p></div>
+    <div id="21" class="cell empty a"><p class="text">Lance une pyramide, de 5 de hauteur<br>21</p></div>
+    <div id="22" class="cell empty d"><p class="text">cul sec<br>22</p></div>
+    <div id="23" class="cell empty f"><p class="text">Finis ton verre<br>23</p></div>
+    <div id="24" class="cell empty e"><p class="text">4 gorges<br>24</p></div>
+    <div id="25" class="cell empty a"><p class="text">SHOT GENERAL !<br>25</p></div>
+    <div id="26" class="cell empty b"><p class="text">3 gorges<br>26</p></div>
+    <div id="27" class="cell empty d"><p class="text">J'ai, je n'ai jamais<br>27</p></div>
+    <div id="28" class="cell empty a"><p class="text">Dans ma valise<br>29</p></div>
+    <div id="29" class="cell empty d"><p class="text">SHOT GENERAL !<br>30/p></div>
+    <div id="30" class="cell empty e"><p class="text">FIN</p></div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    /*
+      $(document).ready(function () {
+
+          function random(length) {
+              let result = '';
+              let characters = 'abcdef';
+              let charactersLength = characters.length;
+              for (let i = 0; i < length; i++) {
+                  result += characters.charAt(Math.floor(Math.random() * charactersLength));
+              }
+              return result;
+          }
+
+
+          let game = $(".main");
+
+          for (let i = 0; i < 30; i++) {
+              game.append("<div class='cell empty "+ random(1) +"'  data-col='0' data-row='"+i+"' id='a'></div>  ");
+          }
+
+          for (let i = 1; i <= 20; i++) {
+              let t = $("#a").attr('id');
+              if(t === "a") {
+                  $("#a").attr("id", i)
+              }
+          }
+
+          //$("cell").toggleClass(random(1));
+
+
+  */
+
+    let cell = $(".cell");
+
+    for(let i = 1; i < 30; i++)
+    {
+        let id = $("#"+i).attr("id");
+        let value = $("#"+id).text();
+        $("#"+id).html("<p class='text'>" + id + "<br><br>" + value + "</p>");
+    }
+
+    });
+*/
+
+</script>
+</body>
+</html>
